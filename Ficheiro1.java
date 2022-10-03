@@ -4,8 +4,6 @@ package ficheiros;
 import static java.awt.PageAttributes.MediaType.C;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 class Ficheiro {
@@ -26,7 +24,18 @@ class Ficheiro {
     }
 
     static void verificaFicheiro() {
-      
+         String nome;
+        System.out.println("Insira o nome do ficheiro a criar");
+        nome = Ficheiros.ler.nextLine();
+        nome = Ficheiros.ler.next();
+        File ficheiro = new File (nome);
+        if(!ficheiro.exists()){
+               System.out.println("O ficheiro não existe");
+            
+        } else{
+            System.out.println("O ficheiro existe");
+            
+    }
     }
 
     static void escreveNoFinalFicheiro() {
