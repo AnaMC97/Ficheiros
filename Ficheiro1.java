@@ -2,7 +2,9 @@
 package ficheiros;
 
 import static java.awt.PageAttributes.MediaType.C;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -39,6 +41,27 @@ class Ficheiro {
     }
 
     static void escreveNoFinalFicheiro() {
+           String nome;
+        System.out.println("Insira o nome do ficheiro a criar");
+        nome = Ficheiros.ler.nextLine();
+        nome = Ficheiros.ler.next();
+        File ficheiro = new File (nome);
+        try {
+            if(!ficheiro.exists()){        
+                ficheiro.createNewFile(); 
+                } 
+                FileWriter fw = new FileWriter(ficheiro, true);
+                BufferedWriter bw = new BufferedWriter (fw);
+                String texto;
+                System.out.println("Insira o conteudo");
+                texto = Ficheiros.ler.nextLine();
+                texto = Ficheiros.ler.nextLine();
+                bw.write(texto);
+                bw.newLine();
+                bw.close();
+                fw.close();
+            } catch (IOException ex){
+                ex.printStackTrace(); }
         
           }
     
